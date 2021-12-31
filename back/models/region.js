@@ -1,20 +1,20 @@
 const Sequelize = require('sequelize')
 
-module.exports = class Board extends Sequelize.Model{
+module.exports = class Region extends Sequelize.Model{
     static init(sequelize){
         return super.init({
-
+            option:{
+                type:Sequelize.STRING
+            }
         },{
             sequelize,
             timestamps:false,
-            modelName:'Board',
-            tableName:'boards',
+            modelName:'Region',
+            tableName:'regions',
             paranoid:false,
             charset:'utf8',
             collate:'utf8_general_ci'
         })
     }
-    static associate(db){
-        
-    }
+
 }

@@ -29,6 +29,8 @@ module.exports = class Chat extends Sequelize.Model{
         })
     }
     static associate(db){
+        db.Chat.belongsToMany(db.Board,{through:'board_id'}),
+        db.Chat.belongsToMany(db.User,{through:'user_id'})
         
     }
 }

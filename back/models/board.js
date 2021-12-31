@@ -5,6 +5,7 @@ module.exports = class Board extends Sequelize.Model{
         return super.init({
             board_id:{
                 type:Sequelize.INTEGER,
+                primaryKey:true,
                 autoIncrement:true
             },
             title:{
@@ -29,6 +30,6 @@ module.exports = class Board extends Sequelize.Model{
         })
     }
     static associate(db){
-
+        db.Board.belongsToMany(db.Chat,{through:'board_id'})
     }
 }
